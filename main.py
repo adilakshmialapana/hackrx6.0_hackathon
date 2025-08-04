@@ -183,7 +183,9 @@ Answer:"""
             print(f"Error processing question '{question}': {str(e)}")
             return f"Error processing question: {str(e)}"
 
-@app.post("/hackrx/run", response_model=Answers, status_code=status.HTTP_200_OK)
+
+@app.post("/api/v1/hackrx/run", response_model=Answers, status_code=status.HTTP_200_OK)
+
 async def run_submissions(data: DocumentInput, credentials: HTTPAuthorizationCredentials = Depends(security)):
     """
     Processes a document and answers a list of questions using a concurrent RAG system.
