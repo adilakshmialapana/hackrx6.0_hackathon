@@ -19,7 +19,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 load_dotenv()
 
 # Set Gemini API key directly
-os.environ["GEMINI_API_KEY"] = "AIzaSyBa_GNaudBwt1f9dobMoZ5SOMCDIF9yeVM"
+api_key = os.getenv("GEMINI_API_KEY")
+os.environ["GEMINI_API_KEY"] = api_key
 
 # --- FastAPI App Instance ---
 app = FastAPI(
